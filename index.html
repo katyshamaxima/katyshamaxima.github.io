@@ -2,29 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/hover-min.css">
-    <!--
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    -->
-    <link rel="stylesheet" href="css/animated.css">
-    <link href="https://fonts.googleapis.com/css?family=Caveat:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Моя любовь</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=cyrillic" rel="stylesheet">
 </head>
-<body id="body" class="main notVisible">
 
-<div id="scene" class="notVisible animated scene">
-    <h2 class="scene-title"></h2>
-    <p class="scene-question"></p>
-    <input class="scene-input hvr-glow" type="text">
-    <p class="scene-reactions"></p>
-    <button class="scene-btn hvr-grow">ДАЛЬШЕ</button>
-</div>
+<style>
+    body{
+        background-color: #eee;
+    }
+    div {
+        margin: 10% auto;
+    }
+    .heart {
+        position: relative;
+        width: 100px;
+        height: 175px;
+        background-color: red;
+        box-shadow: -1px 0px 2px #444;
+        border-radius: 50px 50px 0 0;
+        transform: rotate(315deg);
+    }
+    .heart:before {
+        position: absolute;
+        width: 175px;
+        height: 100px;
+        left: 0;
+        bottom: 0;
+        content: "";
+        background-color: red;
+        box-shadow: 0px 3px 3px #444444; 
+        border-radius: 0 50px 50px 0;
+    }
+    .heart:hover:before, .heart:hover{
+        box-shadow: 0px 1px 1px #444444; 
+    }
+
+    .heart span {
+        display: block;
+        position: relative;
+        top: 80px;
+        left: 30px;
+        font-size: 20px;
+        font-family: 'Pacifico', cursive;
+        color: antiquewhite;
+        transform: rotate(30deg);
+    }
 
 
-<script src="js/siema.min.js"></script>
-<script src="js/main.js"></script>
+    div {
+        margin: 10% auto;
+    }    
+</style>
 
+
+<body>
+        <div class="heart">
+            <span>Моей Катюше</span>
+        </div>   
 </body>
 </html>
