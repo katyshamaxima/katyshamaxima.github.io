@@ -4,62 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Моя любовь</title>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=cyrillic" rel="stylesheet">
+    <title>katusha</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap" rel="stylesheet">
+
+    <script>
+
+        window.onload = function() {
+
+        function rand() {
+            return Math.floor(Math.random() * 256);
+        }
+
+        function set_background_color() {
+            document.body.style.backgroundColor = "rgb(" + rand() + "," + rand() + "," + rand() + ")";
+        }
+
+        function set_text_color() {
+            document.getElementById('text').style.color = "rgb(" + rand() + "," + rand() + "," + rand() + ")";
+        }
+
+        set_background_color();
+        set_text_color();
+
+        setInterval(() => set_background_color(), 700);
+        setInterval(() => set_text_color(), 500);
+
+        };
+    
+    </script>
+
+
+    <style>
+
+        body {
+            padding: 20px;
+        }
+
+        #bg {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+        }
+
+        #text {
+            width: 300px;
+            margin: auto;
+            display: block;
+            font-family: 'Amatic SC', cursive;
+            font-size: 56px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #kisaimg {
+            margin-top: 30px;
+        }
+
+    </style>
+
 </head>
-
-<style>
-    body{
-        background-color: #eee;
-    }
-    div {
-        margin: 10% auto;
-    }
-    .heart {
-        position: relative;
-        width: 100px;
-        height: 175px;
-        background-color: red;
-        box-shadow: -1px 0px 2px #444;
-        border-radius: 50px 50px 0 0;
-        transform: rotate(315deg);
-    }
-    .heart:before {
-        position: absolute;
-        width: 175px;
-        height: 100px;
-        left: 0;
-        bottom: 0;
-        content: "";
-        background-color: red;
-        box-shadow: 0px 3px 3px #444444; 
-        border-radius: 0 50px 50px 0;
-    }
-    .heart:hover:before, .heart:hover{
-        box-shadow: 0px 1px 1px #444444; 
-    }
-
-    .heart span {
-        display: block;
-        position: relative;
-        top: 80px;
-        left: 30px;
-        font-size: 20px;
-        font-family: 'Pacifico', cursive;
-        color: antiquewhite;
-        transform: rotate(30deg);
-    }
-
-
-    div {
-        margin: 10% auto;
-    }    
-</style>
-
-
-<body>
-        <div class="heart">
-            <span>Моей Катюше</span>
-        </div>   
+<body id="bg" style="text-align: center;">
+    <div>
+        <h1 id="text">Прости меняяя</h1>
+        <img id="kisaimg" src="kisa.png" alt="sorykisa"/>
+    </div>
 </body>
 </html>
