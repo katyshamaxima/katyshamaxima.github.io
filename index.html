@@ -7,45 +7,35 @@
     <title>katusha</title>
 
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700&display=swap" rel="stylesheet">
-
-    <script>
-
-        window.onload = function() {
-
-        function rand() {
-            return Math.floor(Math.random() * 256);
-        }
-
-        function set_background_color() {
-            document.body.style.backgroundColor = "rgb(" + rand() + "," + rand() + "," + rand() + ")";
-        }
-
-        function set_text_color() {
-            document.getElementById('text').style.color = "rgb(" + rand() + "," + rand() + "," + rand() + ")";
-        }
-
-        set_background_color();
-        set_text_color();
-
-        setInterval(() => set_background_color(), 700);
-        setInterval(() => set_text_color(), 500);
-
-        };
-    
-    </script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm.js"></script>
 
 
     <style>
 
         body {
+            background-color: rgba(61, 189, 178, 0.77);
             padding: 20px;
         }
 
         #bg {
-            display: flex;
+            /*display: flex;*/
             width: 100%;
             height: auto;
             justify-content: center;
+
+        }
+
+        #bg:after {
+            content: "";
+            background: url(kotenok-kolpak-korobochka.jpeg);
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
         }
 
         #text {
@@ -54,6 +44,7 @@
             display: block;
             font-family: 'Amatic SC', cursive;
             font-size: 56px;
+            transition: 0.5s;
             /*position: absolute;*/
             /*top: 50%;*/
             /*transform: translateY(-50%);*/
@@ -72,16 +63,132 @@
             height: auto;
         }
 
+        #katya-button {
+
+        }
+
+        #santa {
+        }
+
+        #santaimg {
+            height: 200px;
+            width: auto;
+        }
+
+        .elka {
+            display: inline-block;
+            height: 200px;
+            width: auto;
+            transition: 1.5s;
+        }
+        
+        .elka:hover {
+            transform: rotate(35deg);
+        }
+
+        #katya-button {
+            color: #dc3a3a;
+        }
+
+        #katya-button:hover {
+            transition: 0.5s;
+            color: #fc1919;
+            font-size: 65px;
+            cursor: pointer;
+        }
+
+        #heart-container {
+            visibility: hidden;
+            transition: 1s;
+            position: relative;
+        }
+
+        #heart {
+            transition: 1s;
+            height: 200px;
+            width: 200px;
+        }
+
     </style>
 
 </head>
 <body id="bg" style="text-align: center;">
-    <div>
 
-        <img id="kisaimg" src="kisa.png" alt="sorykisa"/>
-        <img id="kisaimg2" src="kisa2.png" alt="sorykisa2"/>
-        <h1 id="text">Прости меня моя <span><img id="zefirka" src="zefirka.png" alt="zefirka"/> </span></h1>
+<div id="heart-container" style="position: absolute; margin-left: 44%; margin-top: 100px;" class="heart">
+    <img id="heart" alt="love" src="1020169.png">
+</div>
 
-    </div>
+<div style="z-index: 1000">
+    <img class="elka" src="CXpsNjhWcAI_Flb.png" alt="elka">
+    <h1 style="display: inline-block" id="text">С новым годом мою <span id="katya-button">Катечку</span></h1>
+    <img class="elka" src="CXpsNjhWcAI_Flb.png" alt="elka">
+</div>
+
+<div id="santa"><img id="santaimg" src="santa_claus.png" alt="santa"/></div>
+
+<marquee id="chastie" style="color: red; font-size: 25px">СЧАСТЬЯ</marquee>
+<marquee id="zdorovie" style="color: red; font-size: 25px">ЗДОРОВЬЯ</marquee>
 </body>
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm.js"></script>
+
+<script>
+    snowStorm.flakesMaxActive = 96;    // show more snow on screen at once
+    snowStorm.useTwinkleEffect = true;
+</script>
+
+<script>
+
+
+    window.onload = function () {
+
+        function rand() {
+            return Math.floor(Math.random() * 256);
+        }
+
+        function set_background_color() {
+            document.body.style.backgroundColor = "rgb(" + rand() + "," + rand() + "," + rand() + ")";
+        }
+
+        function set_text_color() {
+            document.getElementById('text').style.color = "rgb(" + rand() + "," + rand() + "," + rand() + ")";
+        }
+
+        let rotateAngel = -1;
+
+        function rotate_elka() {
+            var elks = document.getElementsByClassName("elka");
+            elks[0].style.transform = "rotate("+ 30 * rotateAngel +"deg)"
+            elks[1].style.transform = "rotate("+ 30 * rotateAngel +"deg)"
+            rotateAngel = rotateAngel * -1;
+        }
+
+        // set_background_color();
+        set_text_color();
+
+        // setInterval(() => set_background_color(), 700);
+        setInterval(() => set_text_color(), 1000);
+        setInterval(() => rotate_elka(), 2000);
+
+        document.getElementById("katya-button").onclick = function (e) {
+            console.log("toggle");
+            document.getElementById("heart").style.visibility = "visible";
+            document.getElementById("heart").style.width = "200px";
+            document.getElementById("heart").style.height = "200px";
+
+            setTimeout(() => {
+                document.getElementById("heart").style.visibility = "hidden";
+                document.getElementById("heart").style.width = "20px";
+                document.getElementById("heart").style.height = "20px";
+            }, 500)
+        }
+
+    };
+
+
+</script>
+
+
+
 </html>
